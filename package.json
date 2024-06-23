@@ -5,22 +5,30 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port 5000",
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "@types/nodemailer": "^6.4.15",
+    "clsx": "^2.1.1",
+    "mongoose": "^8.4.3",
+    "next": "14.2.4",
+    "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.4"
+    "winston": "^3.13.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.4"
+    "eslint-config-next": "14.2.4",
+    "postcss": "^8",
+    "sass": "^1.77.6",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
