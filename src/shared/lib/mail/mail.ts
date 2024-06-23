@@ -30,8 +30,6 @@ export class Mail {
         sender: process.env.ADMIN_MAIL_USER, 
       });
     }
-    catch(e) {
-      console.log(e) 
-      logger.error('Error while sending mail') }
+    catch(e) { logger.error('Error while sending mail') }
   }
 }

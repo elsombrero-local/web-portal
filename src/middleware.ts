@@ -1,19 +1,19 @@
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { Config } from "./config/config";
-
-export const revalidate = 1;
+import { RelativeUrl } from "./utils/relative-url/relative-url";
 
 export default async function Middleware(req: NextRequest) {
   const store = cookies();
-  const url = req.nextUrl.clone()
+  const url = RelativeUrl(req);
+  
   const session = store.get(Config.SessionKey)?.value;
   if(!session && !(url.pathname.includes('/login') || url.pathname.includes('/services/verify'))) {
     url.pathname = '/login';
-    return NextResponse.redirect(url);
+    return NextResponse.rewrite(url);
   } else if(session && (url.pathname.includes('/login') || url.pathname.includes('/services/verify'))) {
     url.pathname = '/'
-    return NextResponse.redirect(url);
+    return NextResponse.rewrite(url);
   } else if(session) {
     try{
       url.pathname = '/services/session';
@@ -26,7 +26,7 @@ export default async function Middleware(req: NextRequest) {
     }catch(e) {
       url.searchParams.delete('id');
       url.pathname = '/services/logout';
-      return NextResponse.redirect(url);
+      return NextResponse.rewrite(url);
     }
   }
 }
