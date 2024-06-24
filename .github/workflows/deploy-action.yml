@@ -21,11 +21,11 @@ jobs:
             cd deploy
             mkdir portal
             cd portal
-            echo -e $ENV_FILE
-            echo -e $ENV_FILE > .env
             git clone https://github.com/elsombrero-local/web-portal.git .
             git checkout env/prod
             git branch
+            echo -e $ENV_FILE
+            echo -e $ENV_FILE > .env
             docker-compose up -d --build
             cd ..
             rm -rf portal
