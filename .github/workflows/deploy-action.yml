@@ -1,0 +1,33 @@
+name: deploy
+run-name: ${{github.actor}} deploy app to the server
+on:
+  push:
+    branches:
+      - env/prod
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.0
+        env:
+          ENV_FILE: $ENV_FILE
+        with:
+          command_timeout: 200m
+          host: elsombrero.pro
+          username: elsombrero
+          port: 22
+          password: ${{secrets.SSH_PASSWORD}}
+          envs: ENV_FILE
+          script: |
+            cd deploy
+            mkdir portal
+            cd portal
+            echo -e $ENV_FILE
+            echo -e $ENV_FILE > .env
+            git clone https://github.com/elsombrero-local/web-portal.git .
+            git checkout env/prod
+            git branch
+            docker-compose up -d --build
+            cd ..
+            rm -rf portal
