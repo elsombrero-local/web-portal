@@ -10,11 +10,14 @@ jobs:
     steps:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.0
+        env:
+          ENV_FILE: ${{vars.ENV_FILE}}
         with:
           command_timeout: 200m
           host: elsombrero.pro
           username: elsombrero
           port: 22
+          envs: ENV_FILE
           password: ${{secrets.SSH_PASSWORD}}
           script: |
             cd deploy
