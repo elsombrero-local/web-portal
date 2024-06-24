@@ -28,6 +28,6 @@ jobs:
             git branch
             echo -e $ENV_FILE
             echo -e $ENV_FILE > .env
-            docker-compose up -d --build
+            docker-compose up -d --build --force-recreate
             cd ..
             rm -rf portal

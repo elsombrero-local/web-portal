@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Input } from "../../../ui/components/Forms/Inputs/Input/Input"
+import { Button } from "../../../ui/components/Forms/Button/Button"
 
 export const Navbar = () => {
   return (
@@ -16,7 +17,10 @@ export const Navbar = () => {
         className="bg-black border-none bg-opacity-35"
       />
       <Link href="/services/logout">
-        Logout
+        <Button size="sm" theme="light" variant="ghost">
+          <i className="lni lni-exit"></i>
+          Logout
+        </Button>
       </Link>
     </nav>
   )

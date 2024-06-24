@@ -6,8 +6,8 @@ export const Button = ({ size, radius, theme, variant, className, ...props}: But
     className={clsx(
       variants.size[size || 'md'],
       variants.radius[radius || 'md'],
-      variants.variants[variant || 'default'].theme[theme || 'primary'],
-      'transition-all duration-200 disabled:opacity-45',
+      variants.variants[variant || 'default'][theme || 'primary'],
+      'transition-all duration-200 disabled:opacity-45 flex items-center gap-2 text-center justify-center',
       className
     )}
     {...props}

@@ -35,7 +35,7 @@ export const LoginWrapper = ({ email }: {email: string | undefined}) => {
             Ask my authentication code
           </Button>
           <Link href="mailto:nirilala.rakotondrasoa@elsombrero.pro">
-            <Button variant="link" theme="warning">
+            <Button variant="link" theme="warning" className="w-full">
               Contact and administrator
             </Button>
           </Link>
