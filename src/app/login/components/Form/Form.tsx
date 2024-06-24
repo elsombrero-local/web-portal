@@ -9,7 +9,7 @@ export const LoginForm = () => {
   return (
     <>
       <div className="text-center flex flex-col gap-16">
-        <i className="fa fa-lock text-5xl"></i>
+        <i className="lni lni-unlock text-5xl"></i>
         <div className="flex flex-col gap-3">
           <p className="text-5xl">Authentication code</p>
           <p className="text-zinc-200">Enter the verification code</p>
@@ -29,10 +29,10 @@ export const LoginForm = () => {
         </div>
         <input type="hidden" name="code" />
         <div className="flex flex-col w-full gap-2">
-          <Button type="submit" size="md" className="w-full">
+          <Button theme="warning" type="submit" size="md" className="w-full">
             Send Code
           </Button>
-          <Button type="button" onClick={() => location.assign('/')} variant="link" size="md" className="w-full">
+          <Button theme="warning" type="button" onClick={() => location.assign('/')} variant="link" size="md" className="w-full">
             You do not receive the code?
           </Button>
         </div>

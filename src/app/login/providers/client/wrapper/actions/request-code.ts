@@ -1,4 +1,4 @@
-import { WebPortalClient } from "../../../../../api";
+import { WebPortalClient } from "../../../../../../api";
 
 type RequestCodeProps = {
   setPending: (state: boolean) => void,

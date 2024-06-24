@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import Link from "next/link";
+import { Navbar } from "../../shared/components/Navbar/Navbar";
+import { Sidenav } from "../../shared/components/Sidenav/Sidenav";
 
 export const metadata: Metadata = {
   title: "Web Portal",
@@ -13,8 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <main>
-      <Link href="/services/logout">Logout</Link>
-      {children}
+      <Navbar />
+      <div className="flex flex-nowrap w-full">
+        <Sidenav />
+        {children}
+      </div>
     </main>
   );
 }
