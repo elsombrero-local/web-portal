@@ -6,6 +6,5 @@ export const FormSubmit = (e: FormEvent<HTMLFormElement>) => {
   const digits = Array.from((form.elements.namedItem('digits') as unknown) as HTMLInputElement[]);
   const code = digits.map((d) => d.value).join('');
   (form.elements.namedItem('code') as HTMLInputElement).value = code;
-  digits.forEach(d => d.remove());
-  form.submit();
+  location.assign(`/services/verify?code=${code}`)
 }
