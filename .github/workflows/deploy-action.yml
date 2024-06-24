@@ -16,7 +16,6 @@ jobs:
           username: elsombrero
           port: 22
           password: ${{secrets.SSH_PASSWORD}}
-          envs: ENV_FILE
           script: |
             cd deploy
             mkdir portal
