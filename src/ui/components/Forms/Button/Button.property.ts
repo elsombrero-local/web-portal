@@ -21,7 +21,7 @@ export const variants = {
       theme: {
         dark: '',
         light: '',
-        primary: 'bg-blue-800 hover:bg-blue-900 active:bg-blue-950',
+        primary: 'bg-blue-800 hover:enabled:bg-blue-900 active:enabled:bg-blue-950',
         secondary: '',
         warning: '',
         accent: '',
@@ -45,7 +45,7 @@ export const variants = {
       theme: {
         dark: '',
         light: '',
-        primary: 'bg-transparent text-blue-800 hover:underline hover:text-blue-900 active:text-blue-950',
+        primary: 'bg-transparent text-blue-800 hover:enabled:underline hover:enabled:text-blue-900 active:enabled:text-blue-950',
         secondary: '',
         warning: '',
         accent: '',

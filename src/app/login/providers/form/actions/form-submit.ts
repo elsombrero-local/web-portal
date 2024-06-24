@@ -1,6 +1,6 @@
 import { FormEvent } from "react";
 
-export const submit = (e: FormEvent<HTMLFormElement>) => {
+export const FormSubmit = (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   const form = e.currentTarget as HTMLFormElement;
   const digits = Array.from((form.elements.namedItem('digits') as unknown) as HTMLInputElement[]);

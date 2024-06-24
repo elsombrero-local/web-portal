@@ -1,7 +1,11 @@
-import { cookies, headers } from "next/headers";
+import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { Config } from "./config/config";
 import { RelativeUrl } from "./utils/relative-url/relative-url";
+import { WebPortalClient } from "./api";
+import axios from "axios";
+
+export const revalidate = 0;
 
 export default async function Middleware(req: NextRequest) {
   const store = cookies();
@@ -10,23 +14,21 @@ export default async function Middleware(req: NextRequest) {
   const session = store.get(Config.SessionKey)?.value;
   if(!session && !(url.pathname.includes('/login') || url.pathname.includes('/services/verify'))) {
     url.pathname = '/login';
-    return NextResponse.rewrite(url);
+    return NextResponse.redirect(url);
   } else if(session && (url.pathname.includes('/login') || url.pathname.includes('/services/verify'))) {
     url.pathname = '/'
-    return NextResponse.rewrite(url);
+    return NextResponse.redirect(url);
   } else if(session) {
     try{
-      url.pathname = '/services/session';
-      url.searchParams.set('id', session);
-      const res = await fetch(url, {
-        credentials: 'same-origin',
-        next: { revalidate: 1 }
-      });
-      if(res.status !== 200) throw new Error('Unauthorized');
+      await WebPortalClient.get(`${url.origin}/services/session`, {
+        params: {
+          id: session
+        },
+      })
     }catch(e) {
       url.searchParams.delete('id');
       url.pathname = '/services/logout';
-      return NextResponse.rewrite(url);
+      return NextResponse.redirect(url);
     }
   }
 }

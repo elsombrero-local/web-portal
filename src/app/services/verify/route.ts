@@ -13,6 +13,7 @@ export const GET = async (req: NextRequest) => {
 
   const code = req.nextUrl.searchParams.get('code');
   const session = await auth.verify(code || '');
+  console.log(code, session);
   
   if(session) {
     store.set(Config.SessionKey, session);
@@ -20,6 +21,7 @@ export const GET = async (req: NextRequest) => {
     url.searchParams.delete('code');
     return NextResponse.redirect(url);
   }
+
   url.pathname = '/login'
   return NextResponse.redirect(url);
 }

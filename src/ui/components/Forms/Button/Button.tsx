@@ -7,7 +7,7 @@ export const Button = ({ size, radius, theme, variant, className, ...props}: But
       variants.size[size || 'md'],
       variants.radius[radius || 'md'],
       variants.variants[variant || 'default'].theme[theme || 'primary'],
-      'transition-all duration-200',
+      'transition-all duration-200 disabled:opacity-45',
       className
     )}
     {...props}
