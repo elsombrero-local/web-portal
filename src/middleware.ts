@@ -3,14 +3,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { Config } from "./config/config";
 import { RelativeUrl } from "./utils/relative-url/relative-url";
 import { WebPortalClient } from "./api";
-import axios from "axios";
 
 export const revalidate = 0;
 
 export default async function Middleware(req: NextRequest) {
   const store = cookies();
   const url = RelativeUrl(req);
-  
   const session = store.get(Config.SessionKey)?.value;
   if(!session && !(url.pathname.includes('/login') || url.pathname.includes('/services/verify'))) {
     url.pathname = '/login';
@@ -35,8 +33,7 @@ export default async function Middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    '/',
-    '/login',
+    '/((?!services|_next/static|_next/image|favicon.ico).*)',
     '/services/verify',
   ]
 }

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Auth } from "../../../shared/lib/auth/auth";
 
+export const revalidate = 0;
+
 export const GET = async (req: NextRequest) => {
   try{
     const auth = await Auth();
