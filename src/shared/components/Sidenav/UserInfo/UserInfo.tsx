@@ -5,9 +5,14 @@ export const UserInfo = () => {
       <strong className="w-[35px] h-[35px] text-sm flex items-center justify-center bg-yellow-600 rounded-full">
         RN
       </strong>
-      <strong className="text-xl">
-        nirilala.rak
-      </strong>
+      <div className="flex flex-col">
+        <strong className="text-sm">
+          nirilala.raktndrs
+        </strong>
+        <small className="text-xs opacity-60">
+          @ElSombrero2
+        </small>
+      </div>
     </div>
   )
 }

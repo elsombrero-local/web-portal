@@ -18,7 +18,11 @@
 
 body {
   color: white;
-  @apply bg-zinc-950;
+  @apply bg-zinc-950 scroll-smooth;
+}
+
+body :not(pre)::-webkit-scrollbar {
+  display: none;
 }
 
 @layer utilities {

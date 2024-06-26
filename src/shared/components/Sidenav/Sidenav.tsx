@@ -3,8 +3,8 @@ import { Item } from "./Item/Item"
 
 export const Sidenav = () => {
   return (
-    <nav className="flex flex-col justify-between h-screen w-[220px] bg-zinc-900 pt-16 pb-5">
-      <div className="flex flex-col gap-7">
+    <nav className="flex flex-col justify-between h-screen w-[220px] bg-zinc-900 pt-20 pb-5 gap-5">
+      <div className="flex flex-col gap-5">
         <UserInfo />
         <div className="flex flex-col gap-2">
           <Item href="/" icon="lni-home" active>Home</Item>

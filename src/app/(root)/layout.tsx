@@ -17,7 +17,9 @@ export default function RootLayout({
       <Navbar />
       <div className="flex flex-nowrap w-full">
         <Sidenav />
-        {children}
+        <div className="py-20 pb-5 px-6 w-screen h-screen overflow-y-auto ">
+          {children}
+        </div>
       </div>
     </main>
   );

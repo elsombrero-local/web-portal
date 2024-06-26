@@ -4,7 +4,7 @@ import { Button } from "../../../ui/components/Forms/Button/Button"
 
 export const Navbar = () => {
   return (
-    <nav className="z-10 py-3 px-8 flex justify-between items-center bg-zinc-900 fixed w-full">
+    <nav className="z-10 py-3 px-8 flex justify-between items-center bg-zinc-900 fixed w-full shadow-zinc-950 shadow-md">
       <strong className="text-lg">
         elsombrero
         <span className="text-yellow-600">.io</span>
