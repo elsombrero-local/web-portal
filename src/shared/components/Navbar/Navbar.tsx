@@ -1,4 +1,4 @@
-import Link from "next/link"
+"use client";
 import { Input } from "../../../ui/components/Forms/Inputs/Input/Input"
 import { Button } from "../../../ui/components/Forms/Button/Button"
 
@@ -16,12 +16,10 @@ export const Navbar = () => {
         inputSize="sm"
         className="bg-black border-none bg-opacity-35"
       />
-      <Link href="/services/logout">
-        <Button size="sm" theme="light" variant="ghost">
-          <i className="lni lni-exit"></i>
-          Logout
-        </Button>
-      </Link>
+      <Button size="sm" theme="light" variant="ghost" onClick={() => location.assign('/services/logout')}>
+        <i className="lni lni-exit"></i>
+        Logout
+      </Button>
     </nav>
   )
 }

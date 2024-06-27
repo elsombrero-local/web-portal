@@ -33,7 +33,6 @@ export default async function Middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!services|_next/static|_next/image|favicon.ico).*)',
-    '/services/verify',
+    '/((?!services|_next/static|_next/image|favicon.ico).*)'
   ]
 }
