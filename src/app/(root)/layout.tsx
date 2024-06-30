@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Navbar } from "../../shared/components/Navbar/Navbar";
 import { Sidenav } from "../../shared/components/Sidenav/Sidenav";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Web Portal",

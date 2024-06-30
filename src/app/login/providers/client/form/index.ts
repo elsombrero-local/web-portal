@@ -8,6 +8,6 @@ export const useLoginForm = () => {
   return {
     actions: { DigitKeyUp, FormSubmit, },
     refs: { form },
-    states: {}
+    states: {},
   }
 }
