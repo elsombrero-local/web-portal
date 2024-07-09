@@ -1,8 +1,9 @@
 import { DateTime } from "luxon"
 import Image from "next/image"
 import { Button } from "@/ui/components/Forms/Button/Button"
+import { User } from "../../../../../../type/dev-to"
 
-export const UserInfo = ({user, publishedAt}: {user: any, publishedAt: string}) => {
+export const UserInfo = ({user, publishedAt}: {user: User, publishedAt: string}) => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center gap-4">

@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { Navbar } from "../../shared/components/Navbar/Navbar";
 import { Sidenav } from "../../shared/components/Sidenav/Sidenav";
-import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Web Portal",
@@ -18,7 +17,7 @@ export default function RootLayout({
       <Navbar />
       <div className="flex flex-nowrap w-full">
         <Sidenav />
-        <div className="py-20 pb-5 px-6 w-screen h-screen overflow-y-auto ">
+        <div className="py-20 pb-5 px-6 w-screen h-screen overflow-y-auto">
           {children}
         </div>
       </div>

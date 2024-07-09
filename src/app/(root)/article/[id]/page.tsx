@@ -1,21 +1,16 @@
-import Markdown from "react-markdown";
-import { DevToClient } from "../../../../api/clients/dev-to";
-import { Button } from "../../../../ui/components/Forms/Button/Button";
-import { Card } from "../../../../ui/components/Cards/Card/Card";
-import { DateTime } from "luxon";
+import { DevToClient } from "@/api/clients/dev-to";
+import { Card } from "@/ui/components/Cards/Card/Card";
 import Image from "next/image";
 import styles from "./Article.module.scss";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { ArticleMarkdown } from "./components/Markdown/Markdown";
 import { UserInfo } from "./components/UserInfo/UserInfo";
 import { Extra } from "./components/Extra/Extra";
+import { Article } from "../../../../type/dev-to";
 
 export const revalidate = 20;
 
 export default async function ArticlePage({params: {id}}: {params: {id: string}}) {
-  
-  const article = (await DevToClient.get(`/articles/${id}`)).data
+  const article = (await DevToClient.get<Article>(`/articles/${id}`)).data
 
   return (
     <div className="flex justify-center gap-5">
@@ -30,7 +25,7 @@ export default async function ArticlePage({params: {id}}: {params: {id: string}}
           alt="Image"
         />}
         <ArticleMarkdown markdown={article.body_markdown} />
-      </Card>
+      </Card> 
       </div>
       <div className="w-[350px]">
         <Card className="shadow-none bg-zinc-900 absolute w-[350px] h-fit flex flex-col gap-6">
