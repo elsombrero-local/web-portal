@@ -6,8 +6,5 @@ services:
       - "5000:5000"
     env_file:
       - .env
-    networks:
-      - local
-networks:
-  local:
-    external: true
+    volumes:
+      - ${CDN_VOLUME_FOLDER}:${CDN_ROOT_DIRECTORY}

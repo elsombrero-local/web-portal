@@ -1,7 +1,7 @@
 import { DateTime } from "luxon"
 import Image from "next/image"
 import { Button } from "@/ui/components/Forms/Button/Button"
-import { User } from "../../../../../../type/dev-to"
+import { User } from "@/type/dev-to"
 
 export const UserInfo = ({user, publishedAt}: {user: User, publishedAt: string}) => {
   return (

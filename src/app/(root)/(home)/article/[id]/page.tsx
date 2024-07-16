@@ -5,7 +5,7 @@ import styles from "./Article.module.scss";
 import { ArticleMarkdown } from "./components/Markdown/Markdown";
 import { UserInfo } from "./components/UserInfo/UserInfo";
 import { Extra } from "./components/Extra/Extra";
-import { Article } from "../../../../type/dev-to";
+import { Article } from "@/type/dev-to";
 
 export const revalidate = 20;
 
