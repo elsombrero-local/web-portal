@@ -1,5 +1,13 @@
 version: '3'
 services:
+  local:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ${CDN_VOLUME_FOLDER}:${CDN_ROOT_DIRECTORY}
   app:
     build: .
     ports:
@@ -8,3 +16,8 @@ services:
       - .env
     volumes:
       - ${CDN_VOLUME_FOLDER}:${CDN_ROOT_DIRECTORY}
+    networks:
+      - local
+networks:
+  local:
+    external: true

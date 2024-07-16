@@ -51,7 +51,7 @@ npm start
 Just run the docker-compose command
 
 ```bash
-docker-compose up
+docker-compose up local
 # Or if you want to run it in detached.
-docker-compose up -d
+docker-compose up -d local
 ```
