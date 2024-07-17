@@ -6,4 +6,5 @@ export type FileItemProps = {
   onClick?: (filename?: string) => void;
   onAction?: () => void;
   key?: string;
+  selected?: boolean;
 }

@@ -12,6 +12,7 @@ export const ArticleCard = ({article}: {article: ArticleItem}) => {
       <div className="flex flex-col gap-2">
         <Image
           className="w-full h-[300px] rounded-xl object-cover object-center"
+          unoptimized
           src={article.cover_image || "/default.jpg"}
           width={0}
           height={0}
