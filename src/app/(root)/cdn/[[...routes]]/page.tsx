@@ -17,7 +17,7 @@ export default async function RootCdnPage({params: {routes}}: {params: {routes: 
           Upload files
         </Button>
       </div>
-      <Files files={files} />
+      <Files files={files} isRoot={!routes} />
     </div>
   )
 } 
