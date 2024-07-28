@@ -11,7 +11,7 @@ export type File = {
 
 export const GetAllFile = async (routes: string[]): Promise<File[]> => {
   const basePath = `${process.env.CDN_ROOT_DIRECTORY}/${routes.join('/')}`;
-  return await Promise.all((await readdir(basePath)).map(async (name) => {
+  return await Promise.all((await readdir(basePath)).filter(name => name !== '.npm').map(async (name) => {
     const path = `${basePath}/${name}`;
     const res = await lstat(path);
     return {

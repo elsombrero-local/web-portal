@@ -1,6 +1,9 @@
+import { FeatureFlagServerProvider } from "../../../shared/components/Providers/FeatureFlag/Server/FeatureFlag";
 
 export default async function MonitoringPage() {
   return (
-    <p>Monitoring Page</p>
+    <FeatureFlagServerProvider flag="monitoring">
+      <p>Monitoring Page</p>
+    </FeatureFlagServerProvider>
   )
 } 

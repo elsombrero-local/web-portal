@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { FileItemProps } from "../Items";
 
-export const FileListItem = ({children, icon, isFolder, onClick}: FileItemProps) => {
+export const FileListItem = ({children, icon, isFolder, onClick, key}: FileItemProps) => {
   return (
     <div
+      key={key}
       onClick={() => onClick && onClick(children)}
       className="flex px-4 py-6 rounded-lg justify-between bg-zinc-950 items-center hover:opacity-70 cursor-pointer active:opacity-60">
       <div className="flex gap-4 items-center">

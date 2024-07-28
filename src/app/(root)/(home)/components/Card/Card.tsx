@@ -6,12 +6,13 @@ import Image from "next/image"
 export const ArticleCard = ({article}: {article: ArticleItem}) => {
   return (
     <div
-      onClick={() => location.assign(`/article/${article.id}`)}
-      className="flex flex-col gap-4 rounded-xl p-3 transition-all duration-200 hover:bg-zinc-800 cursor-pointer active:bg-zinc-900"
-    >
+        onClick={() => location.assign(`/article/${article.id}`)}
+        className="flex flex-col gap-4 rounded-xl p-3 transition-all duration-200 hover:bg-zinc-800 cursor-pointer active:bg-zinc-900"
+      >
       <div className="flex flex-col gap-2">
         <Image
           className="w-full h-[300px] rounded-xl object-cover object-center"
+          unoptimized
           src={article.cover_image || "/default.jpg"}
           width={0}
           height={0}

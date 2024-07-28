@@ -1,7 +1,9 @@
+import { render } from "@react-email/components";
 import { AuthSession } from "../../models/session.model";
 import { Database } from "../database/database";
 import { logger } from "../logger/logger";
 import { Mail } from "../mail/mail";
+import Email from "../../../../emails";
 
 const CODE_LIFE_TIME = 60000
 
@@ -42,7 +44,7 @@ class _Auth {
 
   public async sendCode(email:string, code: string) {
     const mail = Mail.getInstance();
-    await mail.send(email, 'Auth Code', code);
+    await mail.send(email, 'Auth Code', render(Email({code})));
   }
 
   private generate(length: number = 4): string {

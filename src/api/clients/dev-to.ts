@@ -1,7 +1,8 @@
 import axios from "axios";
+import { Config } from "../../config/config";
 
 export const DevToClient = axios.create({
-  baseURL: 'https://dev.to/api/',
+  baseURL: Config.DEV_TO_URL,
   headers: { 
     'Cache-Control': 'no-cache',
     'Pragma': 'no-cache',
