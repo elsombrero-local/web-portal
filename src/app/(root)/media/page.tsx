@@ -1,6 +1,9 @@
+import { FeatureFlagServerProvider } from "../../../shared/components/Providers/FeatureFlag/Server/FeatureFlag";
 
 export default async function MediaPage() {
   return (
-    <p>Media Page</p>
+    <FeatureFlagServerProvider flag="media">
+      <p>Media Page</p>
+    </FeatureFlagServerProvider>
   )
 } 
