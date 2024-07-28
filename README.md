@@ -4,6 +4,7 @@ It's a web portal for all my local applications.
 You can use this app as you want if you have the same need as me.  
 Just don't forget that this project is only for personnal use and it works  
 with my others applications.  
+
 This apps contains many modules that you can disable as you need.
 
 ## Installation
